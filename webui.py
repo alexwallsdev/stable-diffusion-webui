@@ -38,6 +38,11 @@ from modules import extra_networks, ui_extra_networks_checkpoints
 from modules import extra_networks_hypernet, ui_extra_networks_hypernets, ui_extra_networks_textual_inversion
 from modules.call_queue import wrap_gradio_gpu_call, wrap_queued_call, queue_lock  # noqa: F401
 
+# TODO remove this after Dynamo fix
+# Disabling Torch Dynamo since it breaks stuff on Linux
+if os.name == "posix":
+    os.environ["TORCHDYNAMO_DISABLE"] = "1"
+
 # Truncate version number of nightly/local build of PyTorch to not cause exceptions with CodeFormer or Safetensors
 if ".dev" in torch.__version__ or "+git" in torch.__version__:
     torch.__long_version__ = torch.__version__
