@@ -1,0 +1,2 @@
+https://huggingface.co/stabilityai/sd-vae-ft-mse-original/blob/main/vae-ft-mse-840000-ema-pruned.safetensors
+https://huggingface.co/iZELX1/Grapefruit/blob/main/Grapefruit.vae.pt
