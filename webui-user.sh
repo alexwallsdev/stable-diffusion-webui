@@ -10,7 +10,7 @@
 #clone_dir="stable-diffusion-webui"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-#export COMMANDLINE_ARGS=""
+export COMMANDLINE_ARGS="--xformers --port 7861 --autolaunch --medvram --no-half-vae"
 
 # python3 executable
 #python_cmd="python3"
@@ -26,6 +26,8 @@
 
 # install command for torch
 #export TORCH_COMMAND="pip install torch==1.12.1+cu113 --extra-index-url https://download.pytorch.org/whl/cu113"
+export TORCH_COMMAND="pip install torch==2.0.0+cu118 torchvision torchaudio transformers==4.25.1 --extra-index-url https://download.pytorch.org/whl/cu118"
+
 
 # Requirements file to use for stable-diffusion-webui
 #export REQS_FILE="requirements_versions.txt"
@@ -36,6 +38,7 @@
 
 # Fixed git commits
 #export STABLE_DIFFUSION_COMMIT_HASH=""
+#export TAMING_TRANSFORMERS_COMMIT_HASH=""
 #export CODEFORMER_COMMIT_HASH=""
 #export BLIP_COMMIT_HASH=""
 
@@ -43,6 +46,6 @@
 #export ACCELERATE="True"
 
 # Uncomment to disable TCMalloc
-#export NO_TCMALLOC="True"
+export NO_TCMALLOC="True"
 
 ###########################################
